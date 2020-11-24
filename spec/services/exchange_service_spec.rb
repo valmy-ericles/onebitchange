@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'json'
 require './app/services/exchange_service'
@@ -18,7 +20,7 @@ describe ExchangeService do
   end
 
   before do
-    allow(RestClient).to receive(:get) { OpenStruct.new(body: api_return.to_json) }    
+    allow(RestClient).to receive(:get) { OpenStruct.new(body: api_return.to_json) }
   end
 
   it '#call' do
